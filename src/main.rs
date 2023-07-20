@@ -1,24 +1,19 @@
 #![allow(clippy::too_many_arguments, clippy::type_complexity)]
 
-use bevy::{
-    prelude::*,
-    window::PresentMode,
-};
+use bevy::{prelude::*, window::PresentMode};
 
 fn main() {
     App::new()
-        .add_plugins(DefaultPlugins.set(
-            WindowPlugin {
-                primary_window: Some(Window {
-                    title: "Pindorama".into(),
-                    resolution: (800., 500.).into(),
-                    present_mode: PresentMode::AutoVsync,
-                    resizable: false,
-                    ..default()
-                }),
+        .add_plugins(DefaultPlugins.set(WindowPlugin {
+            primary_window: Some(Window {
+                title: "Pindorama".into(),
+                resolution: (800., 500.).into(),
+                present_mode: PresentMode::AutoVsync,
+                resizable: false,
                 ..default()
-            }    
-        ))
+            }),
+            ..default()
+        }))
         .add_systems(Startup, setup)
         .run();
 }
