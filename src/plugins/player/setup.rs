@@ -1,10 +1,8 @@
-use bevy::prelude::*;
 use crate::components::player::PlayerComponent;
 use crate::plugins::player::PlayerEntity;
+use bevy::prelude::*;
 
-pub fn setup_player(
-    mut commands: Commands,
-) {
+pub fn setup_player(mut commands: Commands) {
     let entity = commands
         .spawn(SpriteBundle {
             sprite: Sprite {
@@ -15,9 +13,8 @@ pub fn setup_player(
             transform: Transform::from_xyz(-25., 0., 0.),
             ..default()
         })
-        .insert(PlayerComponent {
-            speed: 300.,
-        }).id();
+        .insert(PlayerComponent { speed: 300. })
+        .id();
 
     commands.insert_resource(PlayerEntity { entity });
 }

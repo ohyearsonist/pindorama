@@ -2,8 +2,8 @@
 
 use bevy::{prelude::*, window::PresentMode};
 
-mod plugins;
 mod components;
+mod plugins;
 
 fn main() {
     App::new()
