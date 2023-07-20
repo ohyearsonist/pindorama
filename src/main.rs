@@ -2,6 +2,9 @@
 
 use bevy::{prelude::*, window::PresentMode};
 
+mod components;
+mod plugins;
+
 fn main() {
     App::new()
         .add_plugins(DefaultPlugins.set(WindowPlugin {
@@ -15,13 +18,10 @@ fn main() {
             ..default()
         }))
         .add_systems(Startup, setup)
+        .add_plugins(plugins::player::PlayerPlugin)
         .run();
 }
 
-fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
+fn setup(mut commands: Commands) {
     commands.spawn(Camera2dBundle::default());
-    commands.spawn(SpriteBundle {
-        texture: asset_server.load("icon.png"),
-        ..Default::default()
-    });
 }
