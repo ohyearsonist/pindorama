@@ -16,7 +16,7 @@ pub fn setup_player(
             ..default()
         })
         .insert(PlayerComponent {
-            speed: 20.,
+            speed: 300.,
         }).id();
 
     commands.insert_resource(PlayerEntity { entity });
