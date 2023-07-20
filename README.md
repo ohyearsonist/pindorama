@@ -10,7 +10,7 @@ This project is set to be developed under Wayland on Linux, with the Mold compil
 
 Below you will find an early roadmap that is subject to many changes.
 
-- [ ] Basic character
+- [X] Basic character
 - [ ] Basic level
 - [ ] Basic level editor
 - [ ] Writing a GDD
